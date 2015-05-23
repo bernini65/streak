@@ -1,0 +1,187 @@
+.center-text{
+    text-align:center;
+}
+
+.no_selection {
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+
+.titleInput{
+    height:100px;
+    font-size: 57px;
+}
+
+.titleInputDiv{
+    padding-top:0px;
+}
+.btn {
+    width:40px;
+    height:40px;
+}
+
+.label-success {
+     width:40px;
+     height:40px;
+     display:inline-block;
+     margin:0;
+     vertical-align:top;
+     font-size:15px;
+     border: 1px solid;
+     border-color: #14971d;
+ }
+
+.label-default{
+    width:40px;
+    height:40px;
+    display:inline-block;
+    margin:0;
+    vertical-align:top;
+    font-size:15px;
+    font-weight:lighter;
+    border: 1px solid;
+    border-color: #d1d1d1;
+    background-color: #f2f2f2;
+    color: #7b7b7b;
+    padding-top:10px;
+}
+.glyphicon-ok {
+    top:9px;
+}
+.btn:hover{
+    color:green;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-size: 57px;
+
+}
+body{
+    background-color: #F5F5F5;
+}
+
+#current{
+    font-size:125px;
+    border: 10px solid;
+    border-radius:50%;
+    width: 200px;
+    height:200px;
+    text-align: center;
+    border-color: #b3e73b;
+    font-weight:bold;
+    color:#87CEEB;
+    margin: 20px;
+}
+#streak{
+    overflow:auto;
+}
+
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.floatright {
+    float: right;
+
+}
+#leftTitle{
+    float: right;
+}
+
+#rightTitle{
+    float: left;
+}
+
+.subTitle{
+
+    margin:10px;
+    font-size:32;
+    font-weight:bold;
+    color:#434B4E;
+}
+
+.infoText{
+
+    margin:10px;
+    font-size:16;
+    font-weight:bold;
+    color:#434B4E;
+}
+
+
+.glyphicon-repeat {
+    font-size: 15;
+    color: #C9B99F;
+}
+
+#msg {
+    font-size:15;
+    font-weight:bold;
+    text-align:center;
+    margin-top:3px;
+
+
+}
+
+.msgcontainer{
+    position:fixed;
+    bottom:-100px;
+    right:0px;
+}
+.bubblecontainer{
+    position:fixed;
+    right:100px;
+    bottom:50px;
+}
+.bubble
+{
+    float:left;
+    margin-top:20px;
+    position: relative;
+    width: 190px;
+    height: 35px;
+    padding: 0px;
+    background: #FFFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: #434B4E solid 3px;
+}
+
+.bubble:after
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 0 6px 9px;
+    border-color: transparent #FFFFFF;
+    display: block;
+    width: 0;
+    z-index: 1;
+    right: -9px;
+    top: 10px;
+}
+
+.bubble:before
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 8px 0 8px 11px;
+    border-color: transparent #434B4E;
+    display: block;
+    width: 0;
+    z-index: 0;
+    right: -14px;
+    top: 8px;
+}

@@ -1,85 +1,67 @@
 
-var ref = new Firebase('https://streak1.firebaseio.com');
-var title;
+(function(){
 
-$(document).ready(function(){
+$(function(){
 
-    var curStreak,maxStreak,lastDate;
-    var done=false;  //done is whether task is already done today
- //   var lastDate;  //last date that an item was completed
-    var lastUpdated = new Date();
-    var today = new Date();
-    var oldTitle;
-    var i=0;
-    var user="solo";
-    var refUser;
-    var lastDate;    
 
-    //$('#popupDialog').popup();
-  
-
-//if user is not known yet, show popup
-
-/*
-    $(document).on('pageshow', '.ui-page',function(event){
-        setTimeout(function () {
-        $('#popupDialog').popup("open");
-    
-        }, 50);
-    })
-*/
+  var ref = new Firebase('https://streak1.firebaseio.com'),
+    title, 
+    curStreak,
+    maxStreak,
+    lastDate,
+    done=false;  //done is whether task is already done today
+    lastUpdated = new Date(),
+    today = new Date(),
+    oldTitle,
+    i=0,
+    user="solo",
+    refUser,
+    lastDate
+  ;
 
 
 //if user is known, update screen with db values
  //when value in db changes, update relevant fields
-    ref.on('value', function(snapshot){
-        refUser = ref.child(user);    
-        refUser.on('value', function(snapshot){
-                    console.log('here');
+  ref.on('value', function(snapshot){
+    refUser = ref.child(user);    
+    
+    refUser.on('value', function(snapshot){
 
-            var msg = snapshot.val();
-            title = msg.title;
-            curStreak = msg.curStreak;
-            maxStreak = msg.maxStreak;
+      var msg = snapshot.val();
+      title = msg.title;
+      curStreak = msg.curStreak;
+      maxStreak = msg.maxStreak;
 
-            lastDateEpoch=msg.lastDate;
-            console.log(lastDateEpoch);
-            lastUpdatedEpoch = msg.lastUpdated;
-      
-            // lastUpdated.setTime(lastUpdatedStr)
+      lastDateEpoch=msg.lastDate;
+      lastUpdatedEpoch = msg.lastUpdated;
 
-            if (maxStreak == undefined){
-                maxStreak = 0;
-            }
-            if (curStreak == undefined){
-                curStreak = 0;
-            }
-            if (title == undefined){
-                title = "Enter Title";
-            }
-            if (lastUpdatedEpoch ==undefined){
-                lastUpdatedEpoch = 0;
-            }
-            if (lastDateEpoch == undefined){
-                lastDateEpoch = 0;
-            }
-            lastDate = new Date(lastDateEpoch);
-console.log(lastDate);
-            lastUpdated = new Date(lastUpdatedEpoch);
 
-            $('#title h1').html(title);
-            $('#curStreak').text(curStreak);
-            $('#maxStreak').text(maxStreak);
-            $('#lastUpdated').text(formatDate(lastUpdated));
+      if (maxStreak == undefined){
+        maxStreak = 0;
+      }
+      if (curStreak == undefined){
+        curStreak = 0;
+      }
+      if (title == undefined){
+        title = "Enter Title";
+      }
+      if (lastUpdatedEpoch ==undefined){
+        lastUpdatedEpoch = 0;
+      }
+      if (lastDateEpoch == undefined){
+        lastDateEpoch = 0;
+      }
+      lastDate = new Date(lastDateEpoch);
+      lastUpdated = new Date(lastUpdatedEpoch);
 
-        })
+      $('#title h1').html(title);
+      $('#curStreak').text(curStreak);
+      $('#maxStreak').text(maxStreak);
+      $('#lastUpdated').text(formatDate(lastUpdated));
 
     })
 
-    
-
-  
-
+  });
 
 
     //if number is clicked, increment by 1
@@ -286,3 +268,6 @@ console.log(lastDate);
 }
 //});
 });
+
+
+})();
